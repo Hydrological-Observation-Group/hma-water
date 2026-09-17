@@ -95,26 +95,24 @@ References
 
 ![ground_observation_locations](figs/ground_station_loc.png)
 
-#### TODO:
+#### TODO:   
+(1, sun) data access for the hma region (data_down/4_rsimg_down_gee_TODO.ipynb).     
+(2, dou) save validation/lake_height/lake_station_lakes_all as .nc data (merge preproc/validation/1_1_lake_station_loc.ipynb and preproc/validation/1_2_lake_station_merge.ipynb into one). Data structure like:     
+station (dimensions)     
+────────────────────────────      
+station_id    0       1       2    
+name          A站     B站     C站     
+lon           102.7   100.2   98.5   
+lat           25.0    25.6    27.1    
 
-(1, sun) data access for the hma region (data_down/4_rsimg_down_gee_TODO.ipynb).
-(2, dou) save validation/lake_height/lake_station_lakes_all as .nc data (merge preproc/validation/1_1_lake_station_loc.ipynb and preproc/validation/1_2_lake_station_merge.ipynb into one). Data structure like:
-
-station (dimensions)
-────────────────────────────
-station_id    0       1       2
-name          A站     B站     C站
-lon           102.7   100.2   98.5
-lat           25.0    25.6    27.1
-
-observation(variables)
-────────────────────────────
-station_index   time          water_level
-0               2020-01-01    12.31
-0               2020-01-02    12.28
-0               2020-01-03    12.35
-1               2018-03-01     8.42
-1               2018-03-05     8.51
-2               2022-01-01    15.21
-...
+observation(variables)     
+────────────────────────────         
+station_index   time          water_level    
+0               2020-01-01    12.31     
+0               2020-01-02    12.28     
+0               2020-01-03    12.35     
+1               2018-03-01     8.42     
+1               2018-03-05     8.51     
+2               2022-01-01    15.21      
+...     
 then revise the data reading code in notebooks/validation/1_dahiti_hydroweb_validate.ipynb, and check the applicability of this code in cross-validation between dahiti and hydroweb.
